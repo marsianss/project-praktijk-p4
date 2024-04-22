@@ -9,8 +9,10 @@ body {
     float: left;
 }
 
-.contact-container {
+#contact-container {
     float: right;
+    margin: 0; 
+    margin-top: 2rem; 
 }
 
 .row {
