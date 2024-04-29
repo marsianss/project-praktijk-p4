@@ -1,0 +1,60 @@
+@use "sass:math";
+
+$screensize: (576px, 768px, 992px, 1200px, 1400px);
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  @each $size in $screensize {
+    @media screen and (min-width: $size) {
+      width: $size - 100px;
+    }
+  }
+}
+
+.row,
+.col,
+[class^="col-"],
+[class*=" col-"],
+.inner {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.col,
+[class^="col-"],
+[class*=" col-"] {
+  flex-direction: column;
+  padding: 0.5rem;
+
+  .inner {
+    flex-direction: column;
+    padding: 0.5rem;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 0.5rem;
+  }
+}
+
+.col {
+  flex: 1;
+}
+
+[class^="col-"],
+[class*=" col-"] {
+  flex: 0 0 auto;
+}
+
+$columncount: 12;
+
+@for $i from 1 through $columncount {
+  .col-#{$i} {
+    width: math.div(100%, math.div($columncount, $i));
+  }
+}
