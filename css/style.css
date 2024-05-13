@@ -21,8 +21,6 @@ h4,
 h5,
 h6 {
   width: 100%;
-  margin: 0.5em 0;
-  font-family: monospace;
   line-height: 1em;
 }
 
