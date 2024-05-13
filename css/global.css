@@ -16,12 +16,11 @@ body {
 
 #googleMap {
   position: absolute;
-  top: 34%;
+  top: 75%;
   left: -50%;
-  width: 120%;
+  width: 119%;
   height: 60%;
-  transform: rotate(0deg);
-  z-index: 16;
+  z-index: 5;
 }
 
 .banner-overlay {
