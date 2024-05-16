@@ -42,7 +42,7 @@ nav .main-menu ul > li > a {
   text-decoration: none;
 }
 nav .main-menu ul > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 nav .user-menu ul > li:first-of-type::after {
   content: "|";
@@ -136,7 +136,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 3;
 }
 
@@ -279,5 +279,6 @@ nav {
 .banner-content p:first-child {
   margin-top: 0;
 }
+
 
 /*# sourceMappingURL=style.css.map */
