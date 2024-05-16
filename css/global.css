@@ -1,3 +1,7 @@
+html, body{
+  height: 100%;
+}
+
 body {
   background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("../img/Background Image.jpg");
   font-family: Verdana;
@@ -26,6 +30,49 @@ body {
     flex-wrap: wrap;
 
 }
+
+.footer {
+  background-color: black;
+  color: #fefefe;
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.footer .content {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.5rem;
+}
+
+.footer .content p {
+  margin-bottom: 1.3rem;
+}
+
+.footer .content a {
+  text-decoration: none;
+  color: #fefefe;
+}
+
+.footer .content a:hover {
+  border-bottom: 1px solid #971717;
+}
+
+.footer .content h4 {
+  margin-bottom: 1.3rem;
+  font-size: 19px;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+footer hr {
+  margin: 2rem ;
+}
+
+
 
 .col,
 [class^=col-],
