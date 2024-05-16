@@ -1,0 +1,55 @@
+/* multimedia.css */
+
+.title { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+.container-med {
+    margin: 50px auto;
+    padding: 0 20px;
+    max-width: 1700px;
+  }
+  
+  .media-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .media-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px;
+    flex: 0 1 calc(50% - 20px); /* Two items per row with a 20px margin between them */
+  }
+  
+  .media-item img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .media-item h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .media-item p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
+  
+  /* Alternate layout for odd and even media items */
+  .media-item:nth-child(odd) {
+    flex-direction: row-reverse; /* Reverse the order for odd items */
+  }
+  
+  @media (max-width: 600px) {
+    .media-item {
+      flex: 0 1 calc(100% - 20px); /* Single item per row on smaller screens */
+    }
+  }
+  
