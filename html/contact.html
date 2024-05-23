@@ -48,7 +48,7 @@
   <section id="contact" class="container">
     <h1 class="title">Contact Us</h1>
     <div class="contact-form">
-      <form action="#" method="POST">
+      <form action="/php/processform.php" method="POST">
         <label for="naam">Naam:</label>
         <input type="text" id="naam" name="naam" required>
 
@@ -56,7 +56,7 @@
         <input type="email" id="email" name="email" required>
 
         <label for="bericht">Message:</label>
-        <textarea id="bericht" name="bericht" required></textarea>
+        <textarea id="bericht" name="bericht" maxlength="3000" required></textarea>
 
         <button type="submit">Verzend</button>
       </form>
@@ -96,11 +96,11 @@
         <p><a href="#">mboutrecht.service@gmail.com</a></p>
       </div>
     </div>
+    <a href="../php/contactresults.php">.</a>
     <footer>
       <hr>
       © 2024 MBO Utrecht
     </footer>
   </div>
-
 </body>
 </html>
