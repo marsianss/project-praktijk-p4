@@ -28,13 +28,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <body>
     <h1>Contact Results</h1>
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "opleidingdb";
-
-
-    $conn = new mysqli($servername, 'root', '', $dbname);
+include 'config.php';
 
 
     if ($conn->connect_error) {

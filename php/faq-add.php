@@ -9,7 +9,7 @@ $naam = $_POST['naam'];
 $email = $_POST['email'];
 $bericht = $_POST['bericht'];
 
-$stmt = $conn->prepare("INSERT INTO contact (Name, Email, Message) VALUES (?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO faq (Name, Email, Message) VALUES (?, ?, ?)");
 
 if (!$stmt) {
     echo "Prepare failed: " . $conn->error;
@@ -20,7 +20,7 @@ $stmt->bind_param("sss", $naam, $email, $bericht);
 if (!$stmt->execute()) {
     echo "Execute failed: " . $stmt->error;
 } else {
-    echo "<div class='success'>Dankjewel! We nemen zo snel mogelijk contact met u op.</div>";
+    echo "<div class='success'>Dankjewel! Na goedkeuring zullen wij uw vraag beantwoorden.</div>";
 }
 
 $stmt->close();

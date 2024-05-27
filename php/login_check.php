@@ -1,11 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "opleidingdb";
-
-
-$conn = new mysqli($servername, 'root', '', $dbname);
+include 'config.php';
 
 
 if ($conn->connect_error) {
