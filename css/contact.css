@@ -96,10 +96,22 @@ details[open] div{
   font-size: 1.3rem;
 }
 
+.read-more, .read-more-faq {
+  margin-top: 20px;
+}
+
 .read-more a {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.read-more-faq a {
   color: black;
   text-decoration: none;
   border: 1px solid black;
   padding: 10px 20px;
   border-radius: 5px;
+  margin-top: 20px;
 }
