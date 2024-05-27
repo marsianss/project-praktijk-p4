@@ -1,0 +1,64 @@
+.title { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+ 
+ .meldaan-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .meldaan-form form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .meldaan-form label {
+    font-weight: bold;
+  }
+  
+  .meldaan-form input,
+  .meldaan-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .meldaan-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .meldaan-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Footer styles */
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 5px 0;
+  }
+
+  main{
+    height: 50%;
+    width: 100%;
+  }
+
+  
