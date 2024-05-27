@@ -31,7 +31,7 @@
         
           $stmt->execute();
   
-          echo "<div class='success'> <p class='successmessage'>Correct aangemeld! </p> </div>";
+          echo "<div class='success'> <p class='successmessage'>Bedankt voor jouw aanmelding! </p> </div>";
           echo "<div class='success'> <p class='successmessage'>Correct aangemeld! Je wordt binnen enkele seconden doorgestuurd naar de homepage.</p> </div>";
 
       // Redirect the user to the homepage after 5 seconds
