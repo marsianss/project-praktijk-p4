@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aanmelden</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/Aanmelden.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<style>
+
+    main{
+     height: 95%;
+    }
+   </style>
+
+   <nav id="">
+           <div class="row container jc-space-between">
+               <div class="main-menu">
+                   <ul>
+                       <li><a href="../html/index.html">Home</a></li>
+                       <li><a href="../html/multimedia.html">Multimedia</a></li>
+                       <li><a href="../html/contact.html">Contact</a></li>
+                   </ul>
+               </div>
+               <div class="user-menu">
+                   <ul>
+                       <li><a href="Aanmelden.html">Meld je aan!</a></li>
+                   </ul>
+               </div>
+           </div>
+           </nav>
+           <main>
+   <section id="banner" class="jc-center ai-center">
+       <div class="title">
+          <div class="jc-center ai-center"><h1>Meld je aan!</h1></div>
+       </div>
+       <div class="form-container">
+       <div class="meldaan-form">
+           <form action="../php/Aanmelden.php" method="post">
+           <label for="burgerservicenummer">Burgerservicenummer</label>
+               <input type="text" name="burgerservicenummer" placeholder="Burgerservicenummer" id="burgerservicenummer" maxlength="9" required>
+   
+               <label for="email">Email</label>
+               <input type="email" name="email" placeholder="Email" id="email" maxlength="30" required>
+               
+               <label for="roepnaam">Roepnaam</label>
+               <input type="text" name="roepnaam" placeholder="Roepnaam" id="roepnaam" maxlength="20" required>
+              
+               <label for="geboortedatum">Geboortedatum</label>
+               <input type="date" name="geboortedatum" placeholder="Geboortedatum" id="geboortedatum" required>
+   
+               <label for="telefoonnummer">Telefoonnummer</label>
+               <input type="tel" name="telefoonnummer" placeholder="Telefoonnummer" id="telefoonnummer" minlength="9" maxlength="15" required>
+              
+              
+               <button type="submit" onclick="redirectToAnotherPage()">Aanmelden</button>
+           
+       </div>
+       </div>
+    </form>
+       </section>
+       </main>
+   
+       <div class="footer">
+       <div class="content">
+         <div class="social-media">
+           <h4>Social</h4>
+           <p>
+             <a href="https://www.instagram.com">Instagram</a>
+           </p>
+           <p>
+             <a href="https://www.twitter.com">Twitter</a>
+           </p>
+           <p>
+             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">YouTube</a>
+           </p>
+   
+   
+         </div>
+         <div class="links">
+           <h4>MBO Utrecht</h4>
+           <p><a href="./index.html">Home</a></p>
+           <p><a href="#">Over Ons</a></p>
+           <p><a href="#">Faq</a></p>
+           <p><a href="#">Contact</a></p>
+         </div>
+         <div class="details">
+           <h4>Address</h4>
+           <p><a href="https://maps.app.goo.gl/ndR7jnKJi2LVVAYa7"> Australiëlaan 17, Utrecht</a>
+           </p>
+           <h4>Mobile</h4>
+           <p><a href="#"> 030 – 28 15 100</a></p>
+           <h4>Email</h4>
+           <p><a href="#">mboutrecht.service@gmail.com</a></p>
+         </div>
+       </div>
+       <footer>
+         <hr>
+         © 2024 MBO Utrecht
+       </footer>
+     </div>
+     
+     <script>
+        function redirectToAnotherPage() {
+          // Replace 'destination_page.html' with the URL of the page you want to redirect to
+          window.location.href = 'destination_page.html';
+        }
+      </script>
+       </body>
+   </html>
