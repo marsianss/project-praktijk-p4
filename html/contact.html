@@ -37,13 +37,52 @@
           <h2>Welkom bij ROBO-ETHIEK!</h2>
           <p>De pagina voor alle info die je nodig hebt over de Robo-Ethiek opleiding!</p>
           <div class="read-more">
-            <a href="#intro">Read More</a>
+            <a href="#faq">Read More</a>
           </div>
         </div>
       </div>
     </section>
     
- 
+    <section id="faq" class="container-faq">
+      <h1 class="title">FAQ</h1>
+      <div class="contact-form">
+        <details>
+          <summary> What topics are covered in the Robotic-Ethics course?</summary>
+           <div class="faq-content">The Robotic-Ethics course covers a variety of topics that explore the intersection of robotics, artificial intelligence, and ethical considerations. Key topics include:
+
+            The history and evolution of robotics and AI.
+            Ethical theories and frameworks applicable to technology.
+            The societal impact of robotics and AI, including issues of privacy, security, and job displacement.
+            Case studies on the ethical implications of specific robotics applications, such as autonomous vehicles, drones, and medical robots.
+            Legal and regulatory aspects of robotics and AI.
+            Designing and programming ethical AI systems.</div>
+        </details>
+        <details>
+          <summary>Who can enroll in the Robotic-Ethics course?</summary>
+           <div class="faq-content">The Robotic-Ethics course is open to all college students, regardless of their major. It is particularly beneficial for students pursuing degrees in computer science, engineering, philosophy, law, and social sciences. There are no prerequisites, making it accessible to anyone interested in understanding the ethical dimensions of robotics and AI.</div>
+        </details>
+        <details>
+          <summary> How will this course benefit my future career?</summary>
+          <div class="faq-content">This course provides valuable insights and skills that are increasingly important in the modern workforce. By understanding the ethical implications of robotics and AI, you will be better equipped to:
+
+            Navigate the complex moral and ethical challenges in technology-related careers.
+            Contribute to the development of responsible and ethical technological solutions.
+            Enhance your critical thinking and ethical reasoning skills, which are highly valued in many professions.
+            Stay informed about current and future trends in technology and their societal impacts.
+            Gain a competitive edge in fields such as AI development, robotics engineering, legal consulting, and public policy.</div>
+        </details>
+        <details>
+          <summary>What is the format of the course, and how are students assessed?</summary>
+          <div class="faq-content">The Robotic-Ethics course is structured as a combination of lectures, discussions, case study analyses, and hands-on projects. Students are assessed through a variety of methods, including:
+
+            Written assignments and essays analyzing ethical dilemmas.
+            Participation in class discussions and debates.
+            Group projects that involve creating ethical frameworks for hypothetical or real-world robotics applications.
+            Quizzes and exams testing knowledge of course material.
+            A final project or paper that allows students to delve deeply into a specific ethical issue related to robotics and AI.</div>
+        </details>
+      </div>
+    </section>
 
   <section id="contact" class="container">
     <h1 class="title">Contact Us</h1>
@@ -102,5 +141,29 @@
       © 2024 MBO Utrecht
     </footer>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.querySelector('details')) {
+        // Fetch all the details elements
+        const details = document.querySelectorAll('details');
+
+        // Add onclick listeners
+        details.forEach((targetDetail) => {
+          targetDetail.addEventListener("click", () => {
+            // Close all details that are not targetDetail
+            details.forEach((detail) => {
+              if (detail !== targetDetail) {
+                detail.style.transitionDuration = '2s';
+                detail.addEventListener('transitionend', () => {
+                  detail.removeAttribute("open");
+                });
+                detail.removeAttribute("open");
+              }
+            });
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
