@@ -9,12 +9,12 @@
     <section id="contact" class="container">
         <h1 class="title">Stuur uw vraag!</h1>
         <div class="contact-form">
-          <form action="/php/faq-add.php" method="POST">
+          <form action="php/processform.php" method="POST">
             <label for="naam">Naam:</label>
-            <input type="text" id="naam" name="naam" required>
+            <input type="text" id="naam" name="naam" maxlenght="50"required>
     
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" maxlenght="80"required>
     
             <label for="bericht">Vraag:</label>
             <textarea id="bericht" name="bericht" maxlength="300" required></textarea>
