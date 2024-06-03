@@ -84,9 +84,28 @@
             Quizzen en examens die de kennis van cursusmateriaal testen.
             Een eindproject of paper dat studenten in staat stelt om diep in te gaan op een specifiek ethisch vraagstuk met betrekking tot robotica en AI.</div>
         </details>
+        <details>
+          <summary>Welke voorkennis is vereist voor de Robotic-Ethiek cursus?</summary>
+          <div class="faq-content">Er is geen specifieke voorkennis vereist voor de Robotic-Ethiek cursus. Echter, basiskennis van robotica, kunstmatige intelligentie, of ethiek kan nuttig zijn. De cursus is ontworpen om toegankelijk te zijn voor zowel beginners als gevorderden.</div>
+        </details>
+        <details>
+          <summary>Hoe lang duurt de Robotic-Ethiek cursus?</summary>
+          <div class="faq-content">De duur van de Robotic-Ethiek cursus varieert, afhankelijk van het programma en de instelling die de cursus aanbiedt. Meestal duurt de cursus een semester, wat ongeveer 12 tot 14 weken is, met wekelijkse sessies.</div>
+        </details>
+        <details>
+          <summary>Zijn er online bronnen of literatuur die ik kan raadplegen voor de cursus?</summary>
+          <div class="faq-content">Ja, er zijn verschillende online bronnen en literatuur die je kunt raadplegen voor de cursus. Aanbevolen boeken zijn onder andere "Robot Ethics 2.0" en "Artificial Intelligence: A Guide for Thinking Humans". Online platforms zoals Coursera en edX bieden ook relevante cursussen en materialen aan.</div>
+        </details>
+        <details>
+          <summary>Wat zijn de kosten van de Robotic-Ethiek cursus?</summary>
+          <div class="faq-content">De kosten van de Robotic-Ethiek cursus kunnen variëren afhankelijk van de instelling die de cursus aanbiedt. Universitaire cursussen kunnen deel uitmaken van het reguliere collegegeld, terwijl online cursussen op platforms zoals Coursera of edX kunnen variëren van gratis tot enkele honderden euro's voor een volledige cursus.</div>
+        </details>
+        <details>
+          <summary>Zijn er mogelijkheden voor praktische toepassingen tijdens de cursus?</summary>
+          <div class="faq-content">Ja, de Robotic-Ethiek cursus omvat vaak praktische toepassingen zoals casestudy-analyses en groepsprojecten. Deze projecten stellen studenten in staat om ethische kaders te ontwikkelen en toe te passen op hypothetische of reële scenario's in de robotica en AI.</div>
+        </details>
       </div>
       <div class="read-more-faq">
-       
       </div>
     </section>
 
@@ -98,7 +117,7 @@
         <input type="text" id="naam" name="naam" maxlength="50" required>
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" pattern=".*\.com" title="Must end with .com" maxlength="80" required>
+        <input type="email" id="email" name="email" pattern=".*\.(com|net|org|eu|nl)" title="Must end with .com .net .org .eu or .nl" maxlength="80" required>
 
         <label for="bericht">Bericht:</label>
         <textarea id="bericht" name="bericht" maxlength="300" required></textarea>
@@ -148,12 +167,28 @@
     </footer>
   </div>
   <script>
+    if (document.querySelector('details')) {
+
+    const details = document.querySelectorAll('details');
+
+    details.forEach((targetDetail) => {
+        targetDetail.addEventListener("click", () => {
+            details.forEach((detail) => {
+                if (detail !== targetDetail) {
+                    detail.removeAttribute("open");
+                }
+            });
+        });
+    });
+}
+
     document.getElementById('myForm').addEventListener('submit', function(event) {
        var website = document.getElementById('website').value;
-       var pattern = /\.com$/;
+       var pattern = /\.(com|net|org|eu|nl)$/;
        if (!pattern.test(website)) {
-           alert('The website must end with .com');
-           event.preventDefault(); // Prevent form submission
+           alert('Must end with .com .net .org .eu .nl');
+           event.preventDefault();
        }
    });
+
  </script>
