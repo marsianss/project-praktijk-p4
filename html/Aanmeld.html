@@ -20,9 +20,9 @@
            <div class="row container jc-space-between">
                <div class="main-menu">
                    <ul>
-                       <li><a href="../html/index.html">Home</a></li>
-                       <li><a href="../html/multimedia.html">Multimedia</a></li>
-                       <li><a href="../html/contact.html">Contact</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="multimedia.html">Multimedia</a></li>
+                       <li><a href="contact.html">Contact</a></li>
                    </ul>
                </div>
                <div class="user-menu">
@@ -44,7 +44,7 @@
                <input type="text" name="burgerservicenummer" placeholder="Burgerservicenummer" id="burgerservicenummer" maxlength="9" required>
    
                <label for="email">Email</label>
-               <input type="email" name="email" placeholder="Email" id="email" maxlength="30" required>
+               <input type="email" name="email" placeholder="Email" id="email"  pattern=".*\.com" title="Must end with .com" maxlength="30" required>
                
                <label for="roepnaam">Roepnaam</label>
                <input type="text" name="roepnaam" placeholder="Roepnaam" id="roepnaam" maxlength="20" required>
@@ -53,10 +53,10 @@
                <input type="date" name="geboortedatum" placeholder="Geboortedatum" id="geboortedatum" required>
    
                <label for="telefoonnummer">Telefoonnummer</label>
-               <input type="tel" name="telefoonnummer" placeholder="Telefoonnummer" id="telefoonnummer" minlength="9" maxlength="15" required>
+               <input type="number" name="telefoonnummer" placeholder="Telefoonnummer" id="telefoonnummer" minlength="9" maxlength="15" required>
               
               
-               <button type="submit" onclick="redirectToAnotherPage()">Aanmelden</button>
+               <button type="submit" onclick="">Aanmelden</button>
            
        </div>
        </div>
@@ -104,10 +104,14 @@
      </div>
      
      <script>
-        function redirectToAnotherPage() {
-          // Replace 'destination_page.html' with the URL of the page you want to redirect to
-          window.location.href = 'destination_page.html';
-        }
+         document.getElementById('myForm').addEventListener('submit', function(event) {
+            var website = document.getElementById('website').value;
+            var pattern = /\.com$/;
+            if (!pattern.test(website)) {
+                alert('The website must end with .com');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
       </script>
        </body>
    </html>
