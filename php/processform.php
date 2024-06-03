@@ -12,21 +12,21 @@ $bericht = $_POST['bericht'];
 $stmt = $conn->prepare("INSERT INTO contact (Name, Email, Message) VALUES (?, ?, ?)");
 
 if (!$stmt) {
-    echo "Prepare failed: " . $conn->error;
+    die("Prepare failed: " . $conn->error);
 }
 
 $stmt->bind_param("sss", $naam, $email, $bericht);
 
 if (!$stmt->execute()) {
-    echo "Execute failed: " . $stmt->error;
+    die("Execute failed: " . $stmt->error);
 } else {
     echo "<div class='success'>Dankjewel! We nemen zo snel mogelijk contact met u op.</div>";
+    // Redirect after 3.5 seconds
+    header('Refresh: 3.5; url=http://project-praktijk.org/html/contact.html');
 }
 
 $stmt->close();
 $conn->close();
-
-header('Refresh: 3.5; url=http://project4/html/contact.html');
 ?>
 
 <style>
