@@ -14,7 +14,7 @@
     main{
      height: 95%;
     }
-    
+
    </style>
 
    <nav id="">
@@ -43,7 +43,7 @@
        <div class="meldaan-form">
            <form action="../php/Aanmelden.php" method="post">
            <label for="burgerservicenummer">Burgerservicenummer</label>
-               <input type="text" name="burgerservicenummer" placeholder="Burgerservicenummer" id="burgerservicenummer" maxlength="9" required>
+               <input type="text" name="burgerservicenummer" placeholder="Burgerservicenummer" id="burgerservicenummer" minlength="9" maxlength="9" required>
    
                <label for="email">Email</label>
                <input type="email" name="email" placeholder="Email" id="email"  pattern=".*\.com" title="Must end with .com" maxlength="30" required>
