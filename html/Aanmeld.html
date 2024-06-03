@@ -12,9 +12,9 @@
 <style>
 
     main{
-     height: 95%;
+     height: 100%;
     }
-    
+
    </style>
 
    <nav id="">
@@ -43,13 +43,16 @@
        <div class="meldaan-form">
            <form action="../php/Aanmelden.php" method="post">
            <label for="burgerservicenummer">Burgerservicenummer</label>
-               <input type="text" name="burgerservicenummer" placeholder="Burgerservicenummer" id="burgerservicenummer" maxlength="9" required>
+               <input type="text" name="burgerservicenummer" placeholder="Burgerservicenummer" id="burgerservicenummer" minlength="9" maxlength="9" required>
    
                <label for="email">Email</label>
                <input type="email" name="email" placeholder="Email" id="email"  pattern=".*\.com" title="Must end with .com" maxlength="30" required>
                
                <label for="roepnaam">Roepnaam</label>
                <input type="text" name="roepnaam" placeholder="Roepnaam" id="roepnaam" maxlength="20" required>
+
+               <label for="achternaam">Achternaam</label>
+               <input type="text" name="achternaam" placeholder="achternaam" id="achternaam" maxlength="20" required>
               
                <label for="geboortedatum">Geboortedatum</label>
                <input type="date" name="geboortedatum" placeholder="Geboortedatum" id="geboortedatum" required>
