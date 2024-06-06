@@ -42,23 +42,3 @@
   .meldaan-form button:hover {
     background-color: #0056b3;
   }
-  
-  /* Footer styles */
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  footer p {
-    margin: 5px 0;
-  }
-
-  main{
-    height: 50%;
-    width: 100%;
-  }
-
-  
