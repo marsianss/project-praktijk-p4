@@ -41,32 +41,33 @@
           <div class="jc-center ai-center"><h1>Meld je aan!</h1></div>
        </div>
        <div class="form-container">
-       <div class="meldaan-form">
-           <form action="../php/Aanmelden.php" method="post">
-           <label for="burgerservicenummer">Burgerservicenummer</label>
-               <input type="text" name="burgerservicenummer" placeholder="Burgerservicenummer" id="burgerservicenummer" minlength="9" maxlength="9" required>
-   
-               <label for="email">Email</label>
-               <input type="email" name="email" placeholder="Email" id="email"  pattern=".*\.com" title="Must end with .com" maxlength="30" required>
-               
-               <label for="roepnaam">Roepnaam</label>
-               <input type="text" name="roepnaam" placeholder="Roepnaam" id="roepnaam" maxlength="20" required>
-
-               <label for="achternaam">Achternaam</label>
-               <input type="text" name="achternaam" placeholder="achternaam" id="achternaam" maxlength="20" required>
-              
-               <label for="geboortedatum">Geboortedatum</label>
-               <input type="date" name="geboortedatum" placeholder="Geboortedatum" id="geboortedatum" required>
-   
-               <label for="telefoonnummer">Telefoonnummer</label>
-               <input type="number" name="telefoonnummer" placeholder="Telefoonnummer" id="telefoonnummer" minlength="9" maxlength="15" required>
-              
-              
-               <button type="submit" onclick="">Aanmelden</button>
-           
-       </div>
-       </div>
-    </form>
+        <div class="meldaan-form">
+            <form id="meldaan-form" action="../php/Aanmelden.php" method="post">
+                <label for="burgerservicenummer">Burgerservicenummer</label>
+                <input type="text" name="burgerservicenummer" placeholder="Burgerservicenummer" id="burgerservicenummer" minlength="9" maxlength="9" required>
+    
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Email" id="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|nl|org|net|edu|gov|uk|us)$" title="Must end with a valid domain such as .com, .nl, .org, .net, .edu, .gov, .uk, or .us" maxlength="30" required>
+    
+                <label for="roepnaam">Roepnaam</label>
+                <input type="text" name="roepnaam" placeholder="Roepnaam" id="roepnaam" maxlength="20" required>
+    
+                <label for="achternaam">Achternaam</label>
+                <input type="text" name="achternaam" placeholder="Achternaam" id="achternaam" maxlength="20" required>
+    
+                <label for="geboortedatum">Geboortedatum</label>
+                <input type="date" name="geboortedatum" placeholder="Geboortedatum" id="geboortedatum" required>
+    
+                <label for="telefoonnummer">Telefoonnummer</label>
+                <input type="number" name="telefoonnummer" placeholder="Telefoonnummer" id="telefoonnummer" minlength="9" maxlength="15" required>
+    
+                <button type="submit">Aanmelden</button>
+            </form>
+        </div>
+    </div>
+    
+    
+    
        </section>
        </main>
    
@@ -110,14 +111,25 @@
      </div>
      
      <script>
-         document.getElementById('myForm').addEventListener('submit', function(event) {
-            var website = document.getElementById('website').value;
-            var pattern = /\.com$/;
-            if (!pattern.test(website)) {
-                alert('The website must end with .com');
-                event.preventDefault(); // Prevent form submission
-            }
-        });
+  document.getElementById('meldaan-form').addEventListener('submit', function(event) {
+    var emailInput = document.getElementById('email');
+    var email = emailInput.value;
+    var pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|nl|org|net|edu|gov|uk|us|be)$/;
+
+    if (!pattern.test(email)) {
+        emailInput.setCustomValidity('The email must end with a valid domain such as .com, .nl, .org, .net, .edu, .gov, .uk, .be, or .us');
+        event.preventDefault(); // Prevent form submission
+    } else {
+        emailInput.setCustomValidity(''); // Clear any previous custom validation message
+    }
+});
+
+// Clear the custom validity message when the user starts typing
+document.getElementById('email').addEventListener('input', function() {
+    this.setCustomValidity('');
+});
+
+
       </script>
        </body>
    </html>

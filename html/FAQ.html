@@ -112,12 +112,13 @@
   <section id="contact" class="container">
     <h1 class="title">Heeft u een nieuwe vraag? Stel hem hier</h1>
     <div class="contact-form">
+      <div class="meldaan-form">
       <form action="../php/processform.php" method="POST">
         <label for="naam">Naam:</label>
         <input type="text" id="naam" name="naam" maxlength="50" required>
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" pattern=".*\.(com|net|org|eu|nl)" title="Must end with .com .net .org .eu or .nl" maxlength="80" required>
+        <input type="email" id="email" name="email" pattern=".*\.(com|net|org|eu|nl)" title="Must end with .com .net .org .eu, be or .nl" maxlength="80" required>
 
         <label for="bericht">Bericht:</label>
         <textarea id="bericht" name="bericht" maxlength="300" required></textarea>
@@ -125,6 +126,8 @@
         <button type="submit">Verzend</button>
       </form>
     </div>
+    </div>
+
   </section>
 
   <div class="footer">
@@ -182,13 +185,22 @@
     });
 }
 
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-       var website = document.getElementById('website').value;
-       var pattern = /\.(com|net|org|eu|nl)$/;
-       if (!pattern.test(website)) {
-           alert('Must end with .com .net .org .eu .nl');
-           event.preventDefault();
-       }
-   });
+document.getElementById('meldaan-form').addEventListener('submit', function(event) {
+    var emailInput = document.getElementById('email');
+    var email = emailInput.value;
+    var pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|nl|org|net|edu|gov|uk|us|be)$/;
+
+    if (!pattern.test(email)) {
+        emailInput.setCustomValidity('The email must end with a valid domain such as .com, .nl, .org, .net, .edu, .gov, .uk, .be, or .us');
+        event.preventDefault(); // Prevent form submission
+    } else {
+        emailInput.setCustomValidity(''); // Clear any previous custom validation message
+    }
+});
+
+// Clear the custom validity message when the user starts typing
+document.getElementById('email').addEventListener('input', function() {
+    this.setCustomValidity('');
+});
 
  </script>
