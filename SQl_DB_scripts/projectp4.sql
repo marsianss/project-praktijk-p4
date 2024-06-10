@@ -40,20 +40,7 @@ CREATE TABLE IF NOT EXISTS `aanmelden` (
 -- Gegevens worden geëxporteerd voor tabel `aanmelden`
 --
 
-INSERT INTO `aanmelden` (`burgerservicenummer`, `email`, `roepnaam`, `geboortedatum`, `telefoonnummer`) VALUES
-(987522355, 'gert@hotmail.com', 'Gert', '2006-02-23', 98525152),
-(987522355, 'plop@plopper.com', 'plop', '2000-02-23', 98525152),
-(987522355, 'plop@plopper.com', 'plop', '2000-02-02', 98525152),
-(987522355, 'plop@plopper.com', 'plop', '2006-02-23', 98525152),
-(987522355, 'plop@plopper.com', 'plop', '2006-02-23', 98525152),
-(987522355, 'plop@plopper.com', 'plop', '2006-02-23', 98525152),
-(987522355, 'plop@plopper.com', 'plop', '0000-00-00', 98525152),
-(987522355, 'plop@plopper.com', 'plop', '0000-00-00', 98525152),
-(987522355, 'plop@plopper.com', 'plop', '2006-02-23', 98525152),
-(987522355, 'plop@plopper.com', 'Gert', '2006-02-23', 98525152),
-(987522355, 'ploppppp@gmail.com', 'plopper', '5955-08-08', 98525152),
-(987522355, 'ploppppp@gmail.com', 'plopper', '0588-02-23', 98525152);
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

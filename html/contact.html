@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Robo-Ethiek Opleiding - Contact</title>
+  <link rel="stylesheet" href="../css/contact.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/global.css" />
-  <link rel="stylesheet" href="../css/contact.css" />
 </head>
 <body>
   <header>
-    <nav class="fixed">
-      <div class="row container jc-space-bet ween">
+    <nav class="fixed"> 
+      <div class="row container jc-space-between">
         <div class="main-menu">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="Informatieopleiding.html">Informatie Opleiding</a></li>
+            <li><a href="Robo-info.html">Informatie Robo-Ethiek</a></li>
             <li><a href="multimedia.html">Multimedia</a></li>
             <li><a href="FAQ.html">FAQ</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -39,29 +40,27 @@
           <h2>Welkom bij ROBO-ETHIEK!</h2>
           <p>Neem hier contact op met ons!</p>
           <div class="read-more">
-            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact Us</a>
           </div>
         </div>
       </div>
     </section>
-    
-   
-
   <section id="contact" class="container">
-    <h1 class="title">Neem Contact Op</h1>
+    <h1 class="title">Neem Contact Met Ons Op</h1>
     <div class="contact-form">
       <form action="../php/processform.php" method="POST">
         <label for="naam">Naam:</label>
-        <input type="text" id="naam" name="naam" maxlength="50" required>
+        <input type="text" placeholder="Voer hier uw naam in *" id="naam" name="naam" maxlength="50" required>
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" pattern=".*\.com" title="Must end with .com" maxlength="80" required>
+        <input type="email" placeholder="Voer hier uw Email in *" id="email" name="email" pattern=".*\.(com|net|org|eu|nl)" title="Must end with .com .net .org .eu or .nl" maxlength="80" required>
 
         <label for="bericht">Bericht:</label>
-        <textarea id="bericht" name="bericht" maxlength="3000" required></textarea>
+        <textarea id="bericht" placeholder="Voer hier uw bericht in *" name="bericht" maxlength="3000" required></textarea>
 
         <button type="submit">Verzend</button>
       </form>
+      <a href="../php/contactresults.php">inloggen</a>
     </div>
   </section>
 
@@ -84,9 +83,9 @@
       <div class="links">
         <h4>MBO Utrecht</h4>
         <p><a href="./index.html">Home</a></p>
-        <p><a href="#">Over Ons</a></p>
-        <p><a href="#">FAQ</a></p>
-        <p><a href="#">Contact</a></p>
+        <p><a href="./index.html">Over Ons</a></p>
+        <p><a href="../html/FAQ.html">FAQ</a></p>
+        <p><a href="./contact.html">Contact</a></p>
       </div>
       <div class="details">
         <h4>Adres</h4>
@@ -98,7 +97,6 @@
         <p><a href="#">mboutrecht.service@gmail.com</a></p>
       </div>
     </div>
-    <a href="../php/contactresults.php">.</a>
     <footer>
       <hr>
       © 2024 MBO Utrecht
@@ -135,6 +133,14 @@
         });
       }
     });
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+       var website = document.getElementById('website').value;
+       var pattern = /\.(com|net|org|eu|nl)$/;
+       if (!pattern.test(website)) {
+           alert('Must end with .com .net .org .eu .nl');
+           event.preventDefault();
+       }
+   });
   </script>
 </body>
 </html>

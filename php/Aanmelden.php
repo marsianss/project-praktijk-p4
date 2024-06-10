@@ -11,7 +11,7 @@
       // Perform database insertion (ensure you have a database connection)
   
       // Sample connection code using PDO
-      $dsn = "mysql:host=localhost;dbname=projectp4";
+      $dsn = "mysql:host=localhost;dbname=opleidingdb";
       $DBusername = "root";
       $DBpassword = '';
       $emailDupe = false;
