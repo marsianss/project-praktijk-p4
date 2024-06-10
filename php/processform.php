@@ -22,7 +22,7 @@ if (!$stmt->execute()) {
 } else {
     echo "<div class='success'>Dankjewel! We nemen zo snel mogelijk contact met u op.</div>";
     // Redirect after 3.5 seconds
-    header('Refresh: 3.5; url=http://project-praktijk.org/html/contact.html');
+    header('Refresh: 3.5; url=../html/contact.html');
 }
 
 $stmt->close();
