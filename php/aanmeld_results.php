@@ -76,7 +76,8 @@ input[type="submit"] {
     </style>
 </head>
 <body>
-    <h1>Contact resultaten</h1>
+
+<h1>Aanmeldingen</h1>
     <?php
 include 'config.php';
 
@@ -86,7 +87,7 @@ include 'config.php';
     }
 
 
-    $stmt = $conn->prepare("SELECT id, Name, Email, Message, created_at FROM contact ORDER BY created_at DESC");
+    $stmt = $conn->prepare("SELECT burgerservicenummer, Email, roepnaam, geboortedatum, telefoonnummer FROM aanmelden");
 
 
     if (!$stmt) {
@@ -99,30 +100,28 @@ include 'config.php';
     }
 
  
-    $stmt->bind_result($id, $name, $email, $message, $created_at);
+    $stmt->bind_result($burgerservicenummer, $Email, $roepnaam, $geboortedatum, $telefoonnnummer);
 
   
     echo "<table><tr
-    ><th>ID</th>
-    <th>Name</th>
+    ><th>Burgerservicenummer</th>
     <th>Email</th>
-    <th>Message</th>
-    <th>Date/Time</th>
+    <th>Roepnaam</th>
+    <th>Geboortedatum</th>
+    <th>Telefoonnummer</th>
     <th>Delete</th>
     </tr>";
     while ($stmt->fetch()) {
-        echo "<tr><td>" . $id . "</td><td>" . $name . "</td><td>" . $email . "</td><td>" . $message . "</td><td>" . $created_at . "</td><td><a href='delete_contact.php?id=" . $id . "'>Delete</a></td></tr>";
+        echo "<tr><td>" . $burgerservicenummer . "</td><td>" . $Email . "</td><td>" . $roepnaam . "</td><td>" . $geboortedatum . "</td><td>" . $telefoonnnummer . "</td><td><a href='delete_aanmelding.php?burgerservicenummer=" . $burgerservicenummer . "'>Delete</a></td></tr>";
     }
     echo "</table>";
+    
 
     $stmt->close();
     $conn->close();
     ?>
-
-
-<a href="./aanmeld_results.php">Aanmeld resultaten</a>
-    
 <a href="../php/faq-approve.php">FAQ resultaten</a>
+<a href="../php/contactresults.php">Contact resultaten</a>
 
      <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {

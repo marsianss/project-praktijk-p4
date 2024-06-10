@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,40 +15,50 @@
 </head>
 <body>
     <h1>FAQ</h1>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-            <th>Date</th>
-        </tr>
-        <?php
+    <?php
 include 'config.php';
 
-        $sql = "SELECT * FROM faq ORDER BY ID asc";
-        $result = $conn->query($sql);
+$sql = "SELECT * FROM faq WHERE approved=0";
+$result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo "<tr>
-                        <td>{$row['ID']}</td>
-                        <td>{$row['Name']}</td>
-                        <td>{$row['Email']}</td>
-                        <td>{$row['Message']}</td>
-                        <td>{$row['created_at']}</td>
-                        <td>
-                            <a href='update_student.php?id={$row['ID']}'>Approve</a>
-                            <a href='delete-faq.php?id={$row['ID']}'>Delete</a>
-                        </td>
-                    </tr>";
-            }
-        } else {
-            echo "<tr><td colspan='5'>No FAQ found</td></tr>";
-        }
-        ?>
+if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<tr><th>ID</th><th>Vraag</th><th>Antwoord</th><th>Datum</th><th>Delete</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>". $row['ID']. "</td>";
+        echo "<td>". $row['Message']. "</td>";
+        echo "<td>";
+        echo "<form action='answer_faq.php' method='post'>";
+        echo "<input type='hidden' name='id' value='". $row['ID']. "'>";
+        echo "<input type='text' name='answer' required>";
+        echo "<input type='submit' value='Answer'>";
+        echo "</form>";
+        echo "</td>";
+        echo "<td>". $row['created_at']. "</td>";
+        echo "<td><a href='delete-faq.php?ID=". $row['ID']. "'>Delete</a></td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "No FAQs to approve";
+}
+?>
+        
     </table>
-    <a href="../html/contact.html">Terug</a>
+    <br><br><br>
+    <a href="../html/FAQ.php">Terug</a>
+    <a href="../php/contactresults.php">Contact</a>
+    <a href="../php/aanmeld_results.php">Aanmelden</a>
+    <?php
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    ?>
+        <form action="logout.php" method="post">
+            <input type="submit" value="Logout">
+        </form>
+    <?php
+    }
+    ?>
     <style>
         body {
     font-family: Arial, sans-serif;
@@ -70,7 +87,8 @@ th, td {
     padding: 8px;
     text-align: left;
     margin: 0; 
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
+    max-width: 50px;
 }
 
 th {

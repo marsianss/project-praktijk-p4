@@ -18,9 +18,8 @@
             <li><a href="Informatieopleiding.html">Informatie Opleiding</a></li>
             <li><a href="Robo-info.html">Informatie Robo-Ethiek</a></li>
             <li><a href="multimedia.html">Multimedia</a></li>
-            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="FAQ.php">FAQ</a></li>
             <li><a href="contact.html">Contact</a></li>
- 
           </ul>
         </div>
         <div class="user-menu">
@@ -46,7 +45,6 @@
         </div>
       </div>
     </section>
-    
     <section id="faq" class="container-faq">
       <h1 class="title">FAQ</h1>
       <div class="contact-form">
@@ -108,7 +106,33 @@
       </div>
       <div class="read-more-faq">
       </div>
-    </section>
+      <div class="contact-form">
+
+      <h1>Community</h1>
+    <?php
+include '../php/config.php';
+
+$sql = "SELECT * FROM faq WHERE approved=1";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<details>";
+        echo "<summary>". $row['Message']. "</summary>";
+        echo "<div class='answer'>". $row['Answer']. "</div>";
+
+        echo "</details>";
+        
+        if (isset($row['created_at'])) {
+          echo "<div class='date'>". $row['created_at'] ."</div>";
+      }
+    }
+} else {
+    echo "No FAQs available";
+} ?>
+      </div>
+  </section>
+
 
   <section id="contact" class="container">
     <h1 class="title">Heeft u een nieuwe vraag? Stel hem hier</h1>
@@ -125,6 +149,7 @@
         <textarea id="bericht" name="bericht" maxlength="300" required></textarea>
 
         <button type="submit">Verzend</button>
+        <a href="../php/faq-approve.php">goedkeuring</a>
       </form>
     </div>
     </div>
