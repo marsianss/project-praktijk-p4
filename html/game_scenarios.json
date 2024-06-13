@@ -1,0 +1,970 @@
+{
+    "scenarios": [
+        {
+            "id": 1,
+            "text": "Je werkt aan een AI-project voor een zorgrobot. Er is een kans om een ongewenst effect te corrigeren dat kan leiden tot privacyproblemen.",
+            "choices": [
+                {
+                    "text": "Je besluit de privacyproblemen aan te pakken.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 2
+                },
+                {
+                    "text": "Je negeert het probleem en werkt verder aan andere functies.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 3
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "Je hebt de privacyproblemen opgelost, maar hierdoor is de ontwikkeling vertraagd. Een klant vraagt om een vroege demo.",
+            "choices": [
+                {
+                    "text": "Je geeft de klant een demo van de huidige versie.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 4
+                },
+                {
+                    "text": "Je vertelt de klant dat de demo nog niet klaar is.",
+                    "reputationChange": -2,
+                    "nextScenarioId": 5
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "Je hebt de privacyproblemen genegeerd. Tijdens een presentatie wordt een groot privacylek ontdekt.",
+            "choices": [
+                {
+                    "text": "Je biedt je excuses aan en belooft het snel op te lossen.",
+                    "reputationChange": -10,
+                    "nextScenarioId": 6
+                },
+                {
+                    "text": "Je ontkent het probleem en gaat verder met de presentatie.",
+                    "reputationChange": -20,
+                    "nextScenarioId": 7
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "De klant is tevreden met de demo, maar vraagt om meer gegevens van patiënten voor een testfase.",
+            "choices": [
+                {
+                    "text": "Je vraagt de patiënten om toestemming om hun gegevens te gebruiken.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 8
+                },
+                {
+                    "text": "Je gebruikt de gegevens zonder toestemming van de patiënten.",
+                    "reputationChange": -10,
+                    "nextScenarioId": 9
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "De klant is teleurgesteld en wil een compensatie voor de vertraging.",
+            "choices": [
+                {
+                    "text": "Je biedt een korting op de uiteindelijke prijs.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 10
+                },
+                {
+                    "text": "Je weigert de compensatie.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 11
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "text": "Je hebt het probleem snel opgelost en je reputatie hersteld, maar het kostte veel tijd en middelen.",
+            "choices": [
+                {
+                    "text": "Je vraagt om extra budget om de vertraging te compenseren.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 12
+                },
+                {
+                    "text": "Je probeert de kosten intern te dekken.",
+                    "reputationChange": -2,
+                    "nextScenarioId": 13
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "text": "Je hebt het probleem genegeerd en nu is er een publieke verontwaardiging over de privacyschendingen.",
+            "choices": [
+                {
+                    "text": "Je treedt af en biedt je excuses aan.",
+                    "reputationChange": -15,
+                    "nextScenarioId": 14
+                },
+                {
+                    "text": "Je probeert de schuld af te schuiven op anderen.",
+                    "reputationChange": -20,
+                    "nextScenarioId": 15
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "text": "De patiënten geven toestemming en de testfase verloopt succesvol.",
+            "choices": [
+                {
+                    "text": "Je publiceert de resultaten met toestemming van de patiënten.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 16
+                },
+                {
+                    "text": "Je publiceert de resultaten zonder de patiënten te informeren.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 17
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "text": "De patiënten komen erachter dat hun gegevens zonder toestemming zijn gebruikt en klagen bij de media.",
+            "choices": [
+                {
+                    "text": "Je biedt publiekelijk je excuses aan en belooft het beter te doen.",
+                    "reputationChange": -10,
+                    "nextScenarioId": 18
+                },
+                {
+                    "text": "Je ontkent de beschuldigingen en gaat door met je werk.",
+                    "reputationChange": -15,
+                    "nextScenarioId": 19
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "text": "De klant waardeert de korting en jullie bouwen een betere relatie op.",
+            "choices": [
+                {
+                    "text": "Je werkt samen met de klant aan verdere verbeteringen.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 20
+                },
+                {
+                    "text": "Je concentreert je op andere klanten.",
+                    "reputationChange": 0,
+                    "nextScenarioId": 21
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "text": "De klant verbreekt de relatie en je verliest een grote bron van inkomsten.",
+            "choices": [
+                {
+                    "text": "Je zoekt naar nieuwe klanten om het verlies te compenseren.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 22
+                },
+                {
+                    "text": "Je probeert de relatie te herstellen met de klant.",
+                    "reputationChange": -2,
+                    "nextScenarioId": 23
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "text": "Het extra budget wordt goedgekeurd en je kunt de projectvertraging inhalen.",
+            "choices": [
+                {
+                    "text": "Je investeert het budget in nieuwe technologieën.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 24
+                },
+                {
+                    "text": "Je gebruikt het budget om het team te belonen.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 25
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "text": "De interne kostenbesparingen leiden tot spanningen binnen het team.",
+            "choices": [
+                {
+                    "text": "Je organiseert een teambuilding activiteit.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 26
+                },
+                {
+                    "text": "Je geeft het team een bonus om de spanning te verlichten.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 27
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "text": "Na je aftreden krijg je een aanbod van een ander bedrijf om aan een nieuw project te werken.",
+            "choices": [
+                {
+                    "text": "Je accepteert het aanbod en begint opnieuw.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 28
+                },
+                {
+                    "text": "Je besluit een sabbatical te nemen en je verder te verdiepen in ethiek.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 29
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "text": "De schuld afschuiven heeft niet gewerkt en je wordt juridisch aangeklaagd.",
+            "choices": [
+                {
+                    "text": "Je huurt een advocaat in om je te verdedigen.",
+                    "reputationChange": -10,
+                    "nextScenarioId": 30
+                },
+                {
+                    "text": "Je probeert een schikking te treffen buiten de rechtbank.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 31
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "text": "De publicatie wordt goed ontvangen en je krijgt lof voor je transparantie.",
+            "choices": [
+                {
+                    "text": "Je start een nieuwe campagne om het project verder te promoten.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 32
+                },
+                {
+                    "text": "Je begint met de planning voor de volgende fase van het project.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 33
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "text": "De patiënten ontdekken de publicatie en voelen zich verraden.",
+            "choices": [
+                {
+                    "text": "Je organiseert een bijeenkomst om de situatie uit te leggen.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 34
+                },
+                {
+                    "text": "Je stuurt persoonlijke excuses naar elke patiënt.",
+                    "reputationChange": -3,
+                    "nextScenarioId": 35
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "text": "Je publieke excuses worden goed ontvangen, maar er is blijvende schade aan je reputatie.",
+            "choices": [
+                {
+                    "text": "Je werkt aan het herstellen van je reputatie door transparanter te zijn.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 36
+                },
+                {
+                    "text": "Je richt je op het verbeteren van je interne processen om herhaling te voorkomen.",
+                    "reputationChange": 2,
+                    "nextScenarioId": 37
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "text": "Je ontkenning heeft de situatie verergerd en je bedrijf verliest klanten.",
+            "choices": [
+                {
+                    "text": "Je begint een PR-campagne om het vertrouwen terug te winnen.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 38
+                },
+                {
+                    "text": "Je zoekt juridisch advies om de schade te beperken.",
+                    "reputationChange": -3,
+                    "nextScenarioId": 39
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "text": "De samenwerking leidt tot innovatieve oplossingen en een sterker partnerschap.",
+            "choices": [
+                {
+                    "text": "Je breidt de samenwerking uit naar andere projecten.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 40
+                },
+                {
+                    "text": "Je richt je op het optimaliseren van het huidige project.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 41
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "text": "Je hebt succes met andere klanten, maar de eerdere klant voelt zich verwaarloosd.",
+            "choices": [
+                {
+                    "text": "Je herstelt de relatie met de eerdere klant.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 42
+                },
+                {
+                    "text": "Je concentreert je volledig op de nieuwe klanten.",
+                    "reputationChange": 0,
+                    "nextScenarioId": 43
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "text": "Je hebt nieuwe klanten gevonden, maar de financiële druk blijft hoog.",
+            "choices": [
+                {
+                    "text": "Je vraagt om extra financiering van investeerders.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 44
+                },
+                {
+                    "text": "Je probeert kosten te besparen door processen te optimaliseren.",
+                    "reputationChange": 2,
+                    "nextScenarioId": 45
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "text": "Je hebt de relatie met de klant hersteld, maar er blijven spanningen bestaan.",
+            "choices": [
+                {
+                    "text": "Je organiseert regelmatige updates en vergaderingen om vertrouwen op te bouwen.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 46
+                },
+                {
+                    "text": "Je biedt de klant extra diensten aan zonder extra kosten.",
+                    "reputationChange": 2,
+                    "nextScenarioId": 47
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "text": "De nieuwe technologieën verbeteren je project aanzienlijk.",
+            "choices": [
+                {
+                    "text": "Je presenteert de verbeteringen aan een breder publiek.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 48
+                },
+                {
+                    "text": "Je gebruikt de technologieën om interne processen te verbeteren.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 49
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "text": "Het team is gemotiveerd door de beloning en de productiviteit stijgt.",
+            "choices": [
+                {
+                    "text": "Je stelt voor om regelmatige beloningsprogramma's in te voeren.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 50
+                },
+                {
+                    "text": "Je richt je op het behalen van nieuwe mijlpalen.",
+                    "reputationChange": 2,
+                    "nextScenarioId": 51
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "text": "De teambuilding activiteit helpt bij het verbeteren van de teamdynamiek.",
+            "choices": [
+                {
+                    "text": "Je plant regelmatige teambuilding activiteiten.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 52
+                },
+                {
+                    "text": "Je richt je op het oplossen van individuele problemen binnen het team.",
+                    "reputationChange": 2,
+                    "nextScenarioId": 53
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "text": "De bonus heeft de spanning verlicht en het team werkt efficiënter.",
+            "choices": [
+                {
+                    "text": "Je verhoogt het budget voor teamondersteuning.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 54
+                },
+                {
+                    "text": "Je investeert in nieuwe trainingsprogramma's voor het team.",
+                    "reputationChange": 2,
+                    "nextScenarioId": 55
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "text": "Je nieuwe project verloopt goed en je reputatie herstelt zich geleidelijk.",
+            "choices": [
+                {
+                    "text": "Je deelt je ervaringen om anderen te waarschuwen voor privacyproblemen.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 56
+                },
+                {
+                    "text": "Je concentreert je volledig op het succes van het nieuwe project.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 57
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "text": "Je sabbatical helpt je om diepere inzichten in ethiek te verkrijgen.",
+            "choices": [
+                {
+                    "text": "Je schrijft een boek over je ervaringen en inzichten.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 58
+                },
+                {
+                    "text": "Je begint een blog om je kennis te delen met een breder publiek.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 59
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "text": "Je advocaat helpt je om de juridische problemen te verminderen, maar je reputatie blijft beschadigd.",
+            "choices": [
+                {
+                    "text": "Je start een rehabilitatieprogramma om je reputatie te herstellen.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je op het minimaliseren van verdere schade.",
+                    "reputationChange": -3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "text": "De schikking helpt om de zaak te sluiten, maar kost veel geld.",
+            "choices": [
+                {
+                    "text": "Je probeert nieuwe inkomstenbronnen te vinden om de kosten te dekken.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je snijdt in de kosten om het verlies te compenseren.",
+                    "reputationChange": -3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "text": "De promotiecampagne verhoogt de zichtbaarheid en het succes van je project.",
+            "choices": [
+                {
+                    "text": "Je breidt de campagne uit naar nieuwe markten.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je concentreert je op het consolideren van je succes in de huidige markten.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "text": "De planning voor de volgende fase verloopt soepel en je team is gemotiveerd.",
+            "choices": [
+                {
+                    "text": "Je stelt ambitieuze doelen voor de volgende fase.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je neemt een voorzichtige aanpak om risico's te minimaliseren.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "text": "De bijeenkomst helpt om de situatie te verhelderen, maar sommige patiënten blijven wantrouwig.",
+            "choices": [
+                {
+                    "text": "Je belooft om transparanter te zijn in de toekomst.",
+                    "reputationChange": -3,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je biedt aanvullende compensatie aan de patiënten.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 
+
+35,
+            "text": "Je beslissing om verantwoordelijkheid te nemen wordt gewaardeerd door je team.",
+            "choices": [
+                {
+                    "text": "Je stelt strengere protocollen in voor patiëntendata.",
+                    "reputationChange": -3,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je organiseert trainingen voor je team om de gegevensbescherming te verbeteren.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "text": "Je transparantie wordt gewaardeerd en helpt bij het herstel van je reputatie.",
+            "choices": [
+                {
+                    "text": "Je voert een intern onderzoek uit om te zorgen dat dit niet opnieuw gebeurt.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt een comité op om de transparantie te waarborgen.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "text": "Je verbetering van interne processen wordt opgemerkt en gewaardeerd.",
+            "choices": [
+                {
+                    "text": "Je publiceert een verslag over de verbeteringen.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je presenteert je aanpak op een conferentie.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "text": "Je PR-campagne helpt enigszins, maar de schade is aanzienlijk.",
+            "choices": [
+                {
+                    "text": "Je huurt een PR-bureau in om je campagne te versterken.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je op het verbeteren van je diensten om vertrouwen terug te winnen.",
+                    "reputationChange": -3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "text": "Je juridische advies helpt de schade te beperken, maar de kosten zijn hoog.",
+            "choices": [
+                {
+                    "text": "Je probeert nieuwe inkomstenbronnen te vinden om de juridische kosten te dekken.",
+                    "reputationChange": -5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je snijdt in de kosten om het verlies te compenseren.",
+                    "reputationChange": -3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "text": "De uitbreiding van de samenwerking leidt tot nieuwe mogelijkheden.",
+            "choices": [
+                {
+                    "text": "Je onderzoekt nieuwe markten om de samenwerking uit te breiden.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je op het versterken van bestaande relaties.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "text": "De optimalisatie van het project leidt tot een aanzienlijke verbetering.",
+            "choices": [
+                {
+                    "text": "Je deelt je successen met andere teams.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je op verdere optimalisatie van interne processen.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "text": "De herstelde relatie leidt tot meer vertrouwen van de klant.",
+            "choices": [
+                {
+                    "text": "Je bouwt verder aan de relatie door regelmatig contact te houden.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je biedt de klant exclusieve voordelen.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "text": "Je focus op nieuwe klanten leidt tot groei, maar de eerdere klant blijft ontevreden.",
+            "choices": [
+                {
+                    "text": "Je probeert de relatie met de eerdere klant te herstellen.",
+                    "reputationChange": 0,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je volledig op het behouden van nieuwe klanten.",
+                    "reputationChange": -3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "text": "De extra financiering helpt om de financiële druk te verlichten.",
+            "choices": [
+                {
+                    "text": "Je investeert in nieuwe projecten om groei te stimuleren.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je gebruikt de financiering om je bestaande projecten te versterken.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "text": "De optimalisatie van processen helpt om kosten te besparen.",
+            "choices": [
+                {
+                    "text": "Je deelt de besparingen met je team door middel van bonussen.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je investeert de besparingen in nieuwe technologieën.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "text": "Regelmatige updates en vergaderingen bouwen vertrouwen op bij de klant.",
+            "choices": [
+                {
+                    "text": "Je stelt een vast schema voor updates en vergaderingen in.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je biedt de klant extra ondersteuning buiten de vergaderingen om.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "text": "De extra diensten worden gewaardeerd door de klant.",
+            "choices": [
+                {
+                    "text": "Je biedt een gepersonaliseerd dienstenpakket aan.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je op het verbeteren van de kern diensten.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "text": "De presentatie van verbeteringen aan een breder publiek verhoogt je reputatie.",
+            "choices": [
+                {
+                    "text": "Je start een publiciteitscampagne om je succes te promoten.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je gebruikt je verhoogde reputatie om nieuwe klanten aan te trekken.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "text": "De verbeterde interne processen verhogen de efficiëntie.",
+            "choices": [
+                {
+                    "text": "Je deelt de verbeteringen met andere afdelingen.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je op verdere optimalisatie binnen je afdeling.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "text": "Regelmatige beloningsprogramma's helpen om de motivatie hoog te houden.",
+            "choices": [
+                {
+                    "text": "Je stelt een jaarlijks beloningsprogramma in.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je op het behalen van nog hogere mijlpalen.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "text": "Je focus op nieuwe mijlpalen inspireert je team.",
+            "choices": [
+                {
+                    "text": "Je stelt een plan op voor het behalen van deze mijlpalen.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je biedt extra ondersteuning aan je team om deze doelen te bereiken.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "text": "Regelmatige teambuilding activiteiten verbeteren de teamdynamiek.",
+            "choices": [
+                {
+                    "text": "Je maakt teambuilding een vast onderdeel van het bedrijf.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je op het ontwikkelen van individuele vaardigheden binnen het team.",
+                   
+
+ "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "text": "Het oplossen van individuele problemen leidt tot een meer harmonieus team.",
+            "choices": [
+                {
+                    "text": "Je stelt een vertrouwenspersoon aan voor teamleden.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je biedt training aan om individuele vaardigheden te verbeteren.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 54,
+            "text": "Het verhoogde budget voor teamondersteuning verbetert de werkomstandigheden.",
+            "choices": [
+                {
+                    "text": "Je investeert in betere faciliteiten voor het team.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je gebruikt het budget voor teambuilding en training.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 55,
+            "text": "De nieuwe trainingsprogramma's verbeteren de vaardigheden van je team.",
+            "choices": [
+                {
+                    "text": "Je stelt een doorlopend trainingsprogramma op.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je biedt gespecialiseerde training aan voor specifieke behoeften.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "text": "Het delen van je ervaringen helpt anderen en verbetert je reputatie.",
+            "choices": [
+                {
+                    "text": "Je organiseert seminars om je ervaringen te delen.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je publiceert je ervaringen in vakbladen.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "text": "Het succes van je nieuwe project leidt tot nieuwe kansen.",
+            "choices": [
+                {
+                    "text": "Je breidt het project uit naar nieuwe markten.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je richt je op het verder verbeteren van het project.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "text": "Je boek wordt goed ontvangen en verbetert je reputatie.",
+            "choices": [
+                {
+                    "text": "Je begint aan een tweede boek over een gerelateerd onderwerp.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je geeft lezingen en presentaties over je boek.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "text": "Je blog trekt een breed publiek en verbetert je reputatie.",
+            "choices": [
+                {
+                    "text": "Je breidt je blog uit met gastschrijvers en interviews.",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Je start een nieuwsbrief om je lezers op de hoogte te houden.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        },
+
+
+        {
+            "id": 60,
+            "text": "Het is over.",
+            "choices": [
+                {
+                    "text": "Dankjewel voor het spelen!",
+                    "reputationChange": 5,
+                    "nextScenarioId": 60
+                },
+                {
+                    "text": "Hopelijk heb je wat geleerd.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 60
+                }
+            ]
+        }
+    ]
+}
