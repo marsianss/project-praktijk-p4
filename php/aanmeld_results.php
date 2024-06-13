@@ -78,59 +78,56 @@ input[type="submit"] {
 <body>
 
 <h1>Aanmeldingen</h1>
-    <?php
+<?php
 include 'config.php';
 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+$stmt = $conn->prepare("SELECT burgerservicenummer, Email, roepnaam, achternaam, geboortedatum, telefoonnummer FROM aanmelden");
 
+if (!$stmt) {
+    echo "Prepare failed: " . $conn->error;
+}
 
-    $stmt = $conn->prepare("SELECT burgerservicenummer, Email, roepnaam, geboortedatum, telefoonnummer FROM aanmelden");
+if (!$stmt->execute()) {
+    echo "Execute failed: " . $stmt->error;
+}
 
+$stmt->bind_result($burgerservicenummer, $Email, $roepnaam, $achternaam, $geboortedatum, $telefoonnnummer);
 
-    if (!$stmt) {
-        echo "Prepare failed: " . $conn->error;
-    }
+echo "<table><tr>
+<th>Burgerservicenummer</th>
+<th>Email</th>
+<th>Roepnaam</th>
+<th>Achternaam</th>
+<th>Geboortedatum</th>
+<th>Telefoonnummer</th>
+<th>Delete</th>
+</tr>";
+while ($stmt->fetch()) {
+    echo "<tr><td>" . $burgerservicenummer . "</td><td>" . $Email . "</td><td>" . $roepnaam . "</td><td>" . $achternaam . "</td><td>" . $geboortedatum . "</td><td>" . $telefoonnnummer . "</td><td><a href='delete_aanmelding.php?burgerservicenummer=" . $burgerservicenummer . "'>Delete</a></td></tr>";
+}
+echo "</table>";
 
-
-    if (!$stmt->execute()) {
-        echo "Execute failed: " . $stmt->error;
-    }
-
- 
-    $stmt->bind_result($burgerservicenummer, $Email, $roepnaam, $geboortedatum, $telefoonnnummer);
-
-  
-    echo "<table><tr
-    ><th>Burgerservicenummer</th>
-    <th>Email</th>
-    <th>Roepnaam</th>
-    <th>Geboortedatum</th>
-    <th>Telefoonnummer</th>
-    <th>Delete</th>
-    </tr>";
-    while ($stmt->fetch()) {
-        echo "<tr><td>" . $burgerservicenummer . "</td><td>" . $Email . "</td><td>" . $roepnaam . "</td><td>" . $geboortedatum . "</td><td>" . $telefoonnnummer . "</td><td><a href='delete_aanmelding.php?burgerservicenummer=" . $burgerservicenummer . "'>Delete</a></td></tr>";
-    }
-    echo "</table>";
-    
-
-    $stmt->close();
-    $conn->close();
-    ?>
+$stmt->close();
+$conn->close();
+?>
 <a href="../php/faq-approve.php">FAQ resultaten</a>
 <a href="../php/contactresults.php">Contact resultaten</a>
 
-     <?php
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    ?>
-        <form action="logout.php" method="post">
-            <input type="submit" value="Logout">
-        </form>
-    <?php
-    }
-    ?>
+<?php
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+?>
+    <form action="logout.php" method="post">
+        <input type="submit" value="Logout">
+    </form>
+<?php
+}
+?>
+
+    
+    
 </body>
 </html>
