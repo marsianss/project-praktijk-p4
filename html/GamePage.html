@@ -6,24 +6,8 @@
 <title>Game Page</title>
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/global.css">
-<style>
-  .game-page { 
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  .game-page .game-container {
-    width: 80%;
-    height: 80%;
-    background-color: white;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-  }
-</style>
+<link rel="stylesheet" href="../css/game.css">
+
 </head>
 <body>
 <nav class="fixed"> 
@@ -48,10 +32,14 @@
 </nav>
 
 <div class="game-page">
-  <div class="game-container">
-    <!--Hier de code van de Game-->
+  <div id="game-container">
+      <h1 class="robo-ethiek-title">Ethiek en Robots</h1>
+      <div class="scenario-text" id="scenario-text"></div>
+      <div class="choices" id="choices"></div>
+      <div class="reputation" id="reputation"></div>
   </div>
-</div>
+
+<script src="game.js"></script>
 </body>
 </html>
 
