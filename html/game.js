@@ -19,6 +19,8 @@ function updateScenario() {
         return;
     }
     
+    //balls
+    
     // Controleer of het huidige scenario het eindscenario is (id 60)
     if (currentScenarioId === 60) {
         endGame();

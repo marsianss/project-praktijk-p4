@@ -69,15 +69,16 @@
             "text": "De klant is teleurgesteld en wil een compensatie voor de vertraging.",
             "choices": [
                 {
-                    "text": "Je biedt een korting op de uiteindelijke prijs.",
-                    "reputationChange": 3,
-                    "nextScenarioId": 10
-                },
-                {
                     "text": "Je weigert de compensatie.",
                     "reputationChange": -5,
                     "nextScenarioId": 11
+                },
+                {
+                    "text": "Je biedt een korting op de uiteindelijke prijs.",
+                    "reputationChange": 3,
+                    "nextScenarioId": 10
                 }
+
             ]
         },
         {
