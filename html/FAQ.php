@@ -25,6 +25,7 @@
         <div class="user-menu">
           <ul>
             <li><a href="Aanmeld.html">Meld je aan!</a></li>
+            <li><a href="../php/contactresults.php">inloggen</a></li>
           </ul>
         </div>
       </div>
