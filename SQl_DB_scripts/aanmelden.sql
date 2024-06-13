@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `aanmelden` (
   `roepnaam` varchar(20) NOT NULL,
   `achternaam` varchar(50) NOT NULL,
   `geboortedatum` date NOT NULL,
-  `telefoonnummer` int NOT NULL
+  `telefoonnummer` varchar(15) NOT NULL
 )ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
