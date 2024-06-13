@@ -26,7 +26,7 @@ if (!$stmt->execute()) {
 $stmt->close();
 $conn->close();
 
-header('Refresh: 3.5; url=../html/contact.html');
+header('Refresh: 3.5; url=../html/FAQ.php');
 ?>
 
 <style>

@@ -1,17 +1,18 @@
+
 <?php
 include 'config.php';
 
-$id = $_GET['ID'];
+$id = $_GET['id'];
 
-$sql = "DELETE FROM faq WHERE ID=$id";
+$sql = "DELETE FROM contact WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
-    echo "FAQ deleted successfully";
+    echo "deleted successfully";
 } else {
     echo "Error deleting record: " . $conn->error;
 }
 
 $conn->close();
 
-header("Location: faq-approve.php");
+header("Location: contactresults.php");
 ?>
