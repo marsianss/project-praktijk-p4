@@ -33,7 +33,6 @@
         
         $stmt->execute();
 
-        echo "<div class='success'><p class='successmessage'>Bedankt voor jouw aanmelding!</p></div>";
         echo "<div class='success'><p class='successmessage'>Correct aangemeld! Je wordt binnen enkele seconden doorgestuurd naar de homepage.</p></div>";
 
         // Redirect the user to the homepage after 5 seconds
@@ -49,4 +48,16 @@
 
  
   ?>
+
+<style>
+.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    color: #155724;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+}
+</style>
 
