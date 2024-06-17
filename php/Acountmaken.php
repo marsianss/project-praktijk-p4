@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Inloggen</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/global.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,17 +59,20 @@
     </style>
 </head>
 <body>
-    <form action="login_check.php" method="post">
-        <h1>Login</h1>
+    <form action="register.php" method="post">
+        <h1>Acount maken</h1>
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" required>
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" required>
         <input type="submit" value="Login">
+
+
         <div class="flex-container">
                 <a href="../html/index.html">Back</a>
-                <a href="Acountmaken.php" class="jc-flex-end">Account Maken</a>
+                <a href="login.php" class="jc-flex-end">Al een Account?</a>
             </div>
+
     </form>
 </body>
 </html>

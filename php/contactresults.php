@@ -124,6 +124,8 @@ include 'config.php';
     
 <a href="../php/faq-approve.php">FAQ resultaten</a>
 
+<a href="./Admin.php">Users Promotie</a>
+
      <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     ?>
