@@ -47,9 +47,9 @@ if ($result->num_rows > 0) {
         
     </table>
     <br><br><br>
-    <a href="../html/FAQ.php">Terug</a>
-    <a href="../php/contactresults.php">Contact</a>
-    <a href="../php/aanmeld_results.php">Aanmelden</a>
+    <a href="./aanmeld_results.php">Aanmeld resultaten</a>
+    <a href="../php/contactresults.php">Contact resultaten</a>
+    <a href="../php/Admin.php">Users Admin</a>
     <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     ?>

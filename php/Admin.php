@@ -136,7 +136,7 @@ $conn->close();
 ?>
 <a href="./aanmeld_results.php">Aanmeld resultaten</a>
 <a href="../php/faq-approve.php">FAQ resultaten</a>
-<a href="./Admin.php">Users Promotie</a>
+<a href="./Admin.php">Users Admin</a>
 
 <?php
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
