@@ -4,49 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Game Page</title>
+<link rel="stylesheet" href="../css/game.css">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/global.css">
-<link rel="stylesheet" href="../css/game.css">
 
 </head>
-
-
 <body>
-<nav class="fixed"> 
-  <div class="row container jc-space-between">
-    <div class="main-menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Informatieopleiding.html">Informatie Opleiding</a></li>
-        <li><a href="Robo-info.html">Informatie Robo-Ethiek</a></li>
-        <li><a href="multimedia.html">Multimedia</a></li>
-        <li><a href="FAQ.php">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <nav class="fixed">
+    <div class="row container jc-space-between">
+      <div class="main-menu">  
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="Informatieopleiding.html">Informatie Opleiding</a></li>
+          <li><a href="Robo-info.html">Informatie Robo-Ethiek</a></li>
+          <li><a href="multimedia.html">Multimedia</a></li>
+          <li><a href="FAQ.php">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="user-menu">
+        <ul>
+          <li><a href="Aanmeld.html">Meld je aan!</a></li>
+          <li><a href="../php/contactresults.php">inloggen</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="user-menu">
-      <ul>
-        <li><a href="Aanmeld.html">Meld je aan!</a></li>
-        <li><a href="../php/contactresults.php">inloggen</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
 <div class="game-page">
   <div id="game-container">
       <h1 class="robo-ethiek-title">Ethiek en Robots</h1>
+      <div id="message"></div>
       <div class="scenario-text" id="scenario-text"></div>
       <div class="choices" id="choices"></div>
       <div class="reputation" id="reputation"></div>
   </div>
+</div>
 
 <script src="game.js"></script>
 </body>
 </html>
-
-
-
-
-
-

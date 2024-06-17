@@ -15,48 +15,72 @@ async function fetchScenarios() {
 function updateScenario() {
     const scenario = scenarios.scenarios.find(s => s.id === currentScenarioId);
     if (!scenario) {
-        console.error(`Scenario with ID ${currentScenarioId} not found`);
+        console.error(`Scenario met ID ${currentScenarioId} niet gevonden`);
         return;
     }
-    
-    //balls
-    
+
     // Controleer of het huidige scenario het eindscenario is (id 60)
     if (currentScenarioId === 60) {
         endGame();
         return;
     }
-    
+
     document.getElementById('scenario-text').innerText = scenario.text;
     const choicesDiv = document.getElementById('choices');
     choicesDiv.innerHTML = '';
-    scenario.choices.forEach((choice, index) => {
+    scenario.choices.forEach((choice) => {
         const button = document.createElement('button');
         button.innerText = choice.text;
         button.classList.add('choice');
         button.onclick = () => makeChoice(choice);
         choicesDiv.appendChild(button);
     });
+
     document.getElementById('reputation').innerText = `Reputatie: ${reputation}`;
+    const messageDiv = document.getElementById('message');
+    messageDiv.classList.add('hidden');
+    messageDiv.innerText = '';
+    messageDiv.classList.remove('positive');
+    messageDiv.classList.remove('negative');
 }
 
 function endGame() {
-    // Toon een bericht dat de game is beëindigd
     const scenarioText = document.getElementById('scenario-text');
-    scenarioText.innerText = "Gefeliciteerd! Je hebt het einde van de game bereikt.";
+    const messageDiv = document.getElementById('message');
 
-    // Voeg een knop toe om opnieuw te spelen
+    scenarioText.innerText = "Gefeliciteerd! Je hebt het einde van de game bereikt.";
+    
+    const skullAndCrossbones = String.fromCodePoint(0x2620); // Skull and Crossbones emoji
+
+    if (reputation > 0) {
+        messageDiv.innerText = "Je hebt een positieve reputatie behaald! Goed gedaan!";
+        messageDiv.classList.add('positive');
+        messageDiv.classList.remove('negative');
+    } else if (reputation < -30) {
+        messageDiv.innerText = `Je hebt een HELE negatieve reputatie behaald. Hoe heb jij dit voor elkaar gekregen.. Probeer het opnieuw! ${skullAndCrossbones}`;
+        messageDiv.classList.add('negative');
+        messageDiv.classList.remove('positive');
+    } else if (reputation < 0) {
+        messageDiv.innerText = "Je hebt een negatieve reputatie behaald. Probeer het opnieuw!";
+        messageDiv.classList.add('negative');
+        messageDiv.classList.remove('positive');
+    } else {
+        messageDiv.innerText = "Je reputatie is neutraal. Probeer een betere score te behalen!";
+        messageDiv.classList.remove('positive');
+        messageDiv.classList.remove('negative');
+    }
+    
+    messageDiv.classList.remove('hidden'); // Show the message
+
     const replayButton = document.createElement('button');
     replayButton.innerText = "Opnieuw spelen";
     replayButton.classList.add('replay-button');
     replayButton.onclick = () => {
-        // Reset de variabelen en begin opnieuw
         currentScenarioId = 1;
         reputation = 0;
         fetchScenarios();
     };
 
-    // Voeg de knop toe aan de keuzescontainer
     const choicesDiv = document.getElementById('choices');
     choicesDiv.innerHTML = '';
     choicesDiv.appendChild(replayButton);
@@ -67,6 +91,5 @@ function makeChoice(choice) {
     currentScenarioId = choice.nextScenarioId;
     updateScenario();
 }
-
 
 fetchScenarios();

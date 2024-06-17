@@ -14,5 +14,5 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 
-header("Location: contactresults.php");
+header("Location: aanmeld_results.php");
 ?>
