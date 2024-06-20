@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
         echo "</form>";
         echo "</td>";
         echo "<td>". $row['created_at']. "</td>";
-        echo "<td><a href='delete-faq.php?ID=". $row['ID']. "'>Delete</a></td>";
+        echo "<td><a href='delete-faq.php?ID=". $row['ID']. "'>Verwijder</a></td>";
         echo "</tr>";
     }
     echo "</table>";

@@ -104,10 +104,10 @@ echo "<table><tr>
 <th>Achternaam</th>
 <th>Geboortedatum</th>
 <th>Telefoonnummer</th>
-<th>Delete</th>
+<th>Verwijderen</th>
 </tr>";
 while ($stmt->fetch()) {
-    echo "<tr><td>" . $burgerservicenummer . "</td><td>" . $Email . "</td><td>" . $roepnaam . "</td><td>" . $achternaam . "</td><td>" . $geboortedatum . "</td><td>" . $telefoonnnummer . "</td><td><a href='delete_aanmelding.php?burgerservicenummer=" . $burgerservicenummer . "'>Delete</a></td></tr>";
+    echo "<tr><td>" . $burgerservicenummer . "</td><td>" . $Email . "</td><td>" . $roepnaam . "</td><td>" . $achternaam . "</td><td>" . $geboortedatum . "</td><td>" . $telefoonnnummer . "</td><td><a href='delete_aanmelding.php?burgerservicenummer=" . $burgerservicenummer . "'>Verwijder</a></td></tr>";
 }
 echo "</table>";
 

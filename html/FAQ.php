@@ -14,7 +14,7 @@
       <div class="row container jc-space-between">
         <div class="main-menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Start</a></li>
             <li><a href="Informatieopleiding.html">Informatie Opleiding</a></li>
             <li><a href="Robo-info.html">Informatie Robo-Ethiek</a></li>
             <li><a href="multimedia.html">Multimedia</a></li>
@@ -109,7 +109,7 @@
       </div>
       <div class="contact-form">
 
-      <h1>Community</h1>
+      <h1>Gestelde vragen</h1>
     <?php
 include '../php/config.php';
 
@@ -150,7 +150,7 @@ if ($result->num_rows > 0) {
         <textarea id="bericht" name="bericht" maxlength="300" required></textarea>
 
         <button type="submit">Verzend</button>
-        <a href="../php/faq-approve.php">goedkeuring</a>
+
       </form>
     </div>
     </div>
@@ -160,7 +160,7 @@ if ($result->num_rows > 0) {
   <div class="footer">
     <div class="content">
       <div class="social-media">
-        <h4>Social Media</h4>
+        <h4>Sociale Media</h4>
         <p>
           <a href="https://www.instagram.com">Instagram</a>
         </p>
@@ -175,7 +175,7 @@ if ($result->num_rows > 0) {
       </div>
       <div class="links">
         <h4>MBO Utrecht</h4>
-        <p><a href="./index.html">Home</a></p>
+        <p><a href="./index.html">Startpagina</a></p>
         <p><a href="#">Over Ons</a></p>
         <p><a href="#">FAQ</a></p>
         <p><a href="#">Contact</a></p>
