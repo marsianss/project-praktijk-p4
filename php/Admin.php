@@ -1,68 +1,82 @@
-<style>
-      body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    background-color: #f5f5f5;
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+    exit;
 }
+?>
 
-h1 {
-    color: #333;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adminpagina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
 
-table {
-    border-collapse: collapse;
-    width: 80%;
-    margin-bottom: 20px;
-}
+        h1 {
+            color: #333;
+        }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    margin: 0; 
-    margin-bottom: 1rem; 
-}
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-bottom: 20px;
+        }
 
-th {
-    background-color: #4cafaf;
-    color: white;
-    margin: 0; 
-    margin-bottom: 1rem; 
-}
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            margin: 0;
+            margin-bottom: 1rem;
+        }
 
-a {
-    color: #4CAF50;
-    text-decoration: none;
-    margin: 0; 
-    margin-bottom: 1rem; 
-}
+        th {
+            background-color: #4cafaf;
+            color: white;
+            margin: 0;
+            margin-bottom: 1rem;
+        }
 
-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-}
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0;
+            margin-bottom: 1rem;
+        }
 
-label, input {
-    margin-bottom: 10px;
-}
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
 
-input[type="submit"] {
-    background-color: #000000;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-</style>
+        label, input {
+            margin-bottom: 10px;
+        }
 
+        input[type="submit"] {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
 
+<h1>Adminpagina</h1>
 <?php
 include 'config.php';
 
@@ -97,6 +111,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         $stmt->close();
+    } elseif (isset($_POST['delete_user_id'])) {
+        // Verwijderen van een gebruiker
+        $user_id = $_POST['delete_user_id'];
+
+        $stmt = $conn->prepare("DELETE FROM users WHERE id=?");
+        $stmt->bind_param("i", $user_id);
+
+        if ($stmt->execute()) {
+            echo "Gebruiker succesvol verwijderd.";
+        } else {
+            echo "Er is een fout opgetreden bij het verwijderen van de gebruiker.";
+        }
+
+        $stmt->close();
     }
 }
 
@@ -105,27 +133,32 @@ $stmt = $conn->prepare("SELECT id, username, role FROM users");
 $stmt->execute();
 $stmt->bind_result($user_id, $username, $role);
 
-echo "<h2>Adminpagina</h2>";
+echo "<h2>Gebruikersbeheer</h2>";
 
-// Toon de lijst met gebruikers in een tabel met de opties om te promoten en te degraderen
-echo "<table border='1'>";
-echo "<tr><th>Gebruikersnaam</th><th>Rol</th><th>Acties</th></tr>";
+echo "<table>";
+echo "<tr><th>Gebruikersnaam</th><th>Rol</th><th>Acties</th><th>Verwijderen</th></tr>";
 while ($stmt->fetch()) {
     echo "<tr>";
     echo "<td>$username</td>";
     echo "<td>$role</td>";
     echo "<td>";
     if ($role !== 'admin') {
-        echo "<form method='post' action='admin.php'>
+        echo "<form method='post' action='admin.php' style='display:inline;'>
                 <input type='hidden' name='promote_user_id' value='$user_id'>
                 <button type='submit'>Promoveer tot Admin</button>
               </form>";
     } else {
-        echo "<form method='post' action='admin.php'>
+        echo "<form method='post' action='admin.php' style='display:inline;'>
                 <input type='hidden' name='demote_user_id' value='$user_id'>
                 <button type='submit'>Verwijder Admin Privileges</button>
               </form>";
     }
+    echo "</td>";
+    echo "<td>";
+    echo "<form method='post' action='admin.php' style='display:inline;'>
+            <input type='hidden' name='delete_user_id' value='$user_id'>
+            <button type='submit'>Verwijder Gebruiker</button>
+          </form>";
     echo "</td>";
     echo "</tr>";
 }
@@ -134,6 +167,7 @@ echo "</table>";
 $stmt->close();
 $conn->close();
 ?>
+
 <a href="./aanmeld_results.php">Aanmeld resultaten</a>
 <a href="../php/faq-approve.php">FAQ resultaten</a>
 <a href="./Admin.php">Users Admin</a>
@@ -148,3 +182,4 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 }
 ?>
 </body>
+</html>
