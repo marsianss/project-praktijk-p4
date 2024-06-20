@@ -48,11 +48,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             margin-bottom: 1rem;
         }
 
-        a {
+        a, .delete-btn {
             color: #4CAF50;
             text-decoration: none;
             margin: 0;
             margin-bottom: 1rem;
+            cursor: pointer;
+            display: inline-block;
+            padding: 8px 16px;
+            border: none;
+            background-color: transparent;
         }
 
         form {
@@ -145,19 +150,19 @@ while ($stmt->fetch()) {
     if ($role !== 'admin') {
         echo "<form method='post' action='admin.php' style='display:inline;'>
                 <input type='hidden' name='promote_user_id' value='$user_id'>
-                <button type='submit'>Promoveer tot Admin</button>
+                <button type='submit' class='delete-btn'>Promoveer tot Admin</button>
               </form>";
     } else {
         echo "<form method='post' action='admin.php' style='display:inline;'>
                 <input type='hidden' name='demote_user_id' value='$user_id'>
-                <button type='submit'>Verwijder Admin Privileges</button>
+                <button type='submit' class='delete-btn'>Verwijder Admin Privileges</button>
               </form>";
     }
     echo "</td>";
     echo "<td>";
     echo "<form method='post' action='admin.php' style='display:inline;'>
             <input type='hidden' name='delete_user_id' value='$user_id'>
-            <button type='submit'>Verwijder Gebruiker</button>
+            <button type='submit' class='delete-btn'>Verwijder Gebruiker</button>
           </form>";
     echo "</td>";
     echo "</tr>";
