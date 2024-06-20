@@ -150,7 +150,7 @@ if ($result->num_rows > 0) {
         <textarea id="bericht" name="bericht" maxlength="300" required></textarea>
 
         <button type="submit">Verzend</button>
-        <a href="../php/faq-approve.php">goedkeuring</a>
+
       </form>
     </div>
     </div>
