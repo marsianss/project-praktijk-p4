@@ -108,10 +108,10 @@ include 'config.php';
     <th>Email</th>
     <th>Message</th>
     <th>Date/Time</th>
-    <th>Delete</th>
+    <th>Verwijder</th>
     </tr>";
     while ($stmt->fetch()) {
-        echo "<tr><td>" . $id . "</td><td>" . $name . "</td><td>" . $email . "</td><td>" . $message . "</td><td>" . $created_at . "</td><td><a href='delete_contact.php?id=" . $id . "'>Delete</a></td></tr>";
+        echo "<tr><td>" . $id . "</td><td>" . $name . "</td><td>" . $email . "</td><td>" . $message . "</td><td>" . $created_at . "</td><td><a href='delete_contact.php?id=" . $id . "'>Verwijder</a></td></tr>";
     }
     echo "</table>";
 
