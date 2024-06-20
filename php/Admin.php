@@ -91,7 +91,7 @@ button {
     flex-direction: column;
     gap: 15px;
 }
-</style>
+
         label, input {
             margin-bottom: 10px;
         }
