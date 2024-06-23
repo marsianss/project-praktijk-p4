@@ -1,15 +1,21 @@
 let scenarios;
-let currentScenarioId = 1;
+let currentScenarioId;
 let reputation = 0;
 
 async function fetchScenarios() {
     try {
         const response = await fetch('game_scenarios.json');
         scenarios = await response.json();
-        updateScenario();
+        startRandomScenario();
     } catch (error) {
         console.error('Error fetching scenarios:', error);
     }
+}
+
+function startRandomScenario() {
+    const randomIndex = Math.floor(Math.random() * scenarios.scenarios.length);
+    currentScenarioId = scenarios.scenarios[randomIndex].id;
+    updateScenario();
 }
 
 function updateScenario() {
@@ -76,7 +82,7 @@ function endGame() {
     replayButton.innerText = "Opnieuw spelen";
     replayButton.classList.add('replay-button');
     replayButton.onclick = () => {
-        currentScenarioId = 1;
+        startRandomScenario();
         reputation = 0;
         fetchScenarios();
     };
@@ -89,7 +95,13 @@ function endGame() {
 function makeChoice(choice) {
     reputation += choice.reputationChange;
     currentScenarioId = choice.nextScenarioId;
-    updateScenario();
+
+    // Check if the next scenario is the end game scenario
+    if (currentScenarioId === 60) {
+        endGame();
+    } else {
+        updateScenario();
+    }
 }
 
 fetchScenarios();

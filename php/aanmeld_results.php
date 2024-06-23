@@ -66,7 +66,7 @@ label, input {
 }
 
 input[type="submit"] {
-    background-color: #000000;
+    background-color: #4cafaf;
     color: white;
     border: none;
     padding: 10px;

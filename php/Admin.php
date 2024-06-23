@@ -66,6 +66,32 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             width: 300px;
         }
 
+input[type="submit"] {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;    
+}
+
+
+button {
+    padding: 15px 30px;
+    background-color: #4cafaf;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
         label, input {
             margin-bottom: 10px;
         }

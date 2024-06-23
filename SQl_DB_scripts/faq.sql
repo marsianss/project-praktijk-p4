@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `faq`
 --
 
+use opleidingdb; 
 DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
   `ID` int NOT NULL AUTO_INCREMENT,
